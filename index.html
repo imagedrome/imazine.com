@@ -1,58 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IMAZINE.COM</title>
+  <meta name="robots" content="noindex" />
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
-      background: #3e4c93;
+    }
+    body {
+      background-color: #3e4c93;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
+      gap: 20px;
     }
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-    .container {
-      text-align: center;
-      margin-top: 240px;
-    }
-    .email {
-      margin-top: 120px;
-      cursor: pointer;
-    }
-    .bottom {
-      margin-top: 60px;
-    }
-    @media (max-width: 768px) {
-      .container {
-        margin-top: 160px;
+    @media (max-width: 600px) {
+      body {
+        padding: 40px 20px;
       }
-      .email {
-        margin-top: 80px;
-      }
-      .bottom {
-        margin-top: 40px;
+      .content {
+        gap: 16px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="images/logo@2x.png" alt="Logo" width="280" />
+  <div class="content">
+    <img src="images/logo@1x.png"
+         srcset="images/logo@1x.png 1x, images/logo@2x.png 2x"
+         alt="IMAZINE.COM logo" />
+
+    <a href="mailto:domain@imagedrome.com" aria-label="Contact by email">
+      <img src="images/email@1x.png"
+           srcset="images/email@1x.png 1x, images/email@2x.png 2x"
+           alt="Email icon" />
+    </a>
+
+    <a href="mailto:domain@imagedrome.com" aria-label="Email us for inquiries">
+      <img src="images/main_text@1x.png"
+           srcset="images/main_text@1x.png 1x, images/main_text@2x.png 2x"
+           alt="For inquiries about this domain, please contact us via email." />
+    </a>
   </div>
-  <div class="email" onclick="window.location.href='mailto:domain@imagedrome.com'">
-    <img src="images/email@2x.png" alt="Email Icon" width="80" />
-  </div>
-  <div class="bottom" onclick="window.location.href='mailto:domain@imagedrome.com'">
-    <img src="images/main_text@2x.png" alt="Main Text" width="340" />
-    <img src="images/sub_text@2x.png" alt="Sub Text" width="420" />
-  </div>
+
+  <script>
+    const links = document.querySelectorAll('a[href^="mailto:"]');
+    links.forEach(a => {
+      const addr = "domain" + "@" + "imagedrome.com";
+      a.href = "mailto:" + addr;
+    });
+  </script>
 </body>
 </html>
