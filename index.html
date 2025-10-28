@@ -7,11 +7,11 @@
 
 <meta name="robots" content="index,follow" />
 
-<meta name="description" content="Official domain of IMAZINE.COM. For inquiries regarding this domain or business collaborations, please contact us via email." />
+<meta name="description" content="Official website of IMAZINE.COM. For inquiries or collaborations related to this domain, please contact us via email." />
 <meta name="keywords" content="IMAZINE, imazine.com, domain, magazine, brand, imagedrome, business, inquiries" />
 
-<meta property="og:title" content="IMAZINE.COM Official Domain" />
-<meta property="og:description" content="For inquiries about this domain or related brand opportunities, please contact us via email." />
+<meta property="og:title" content="IMAZINE.COM — Official Website" />
+<meta property="og:description" content="For inquiries or collaborations regarding this domain, please contact us via email." />
 <meta property="og:url" content="https://imazine.com" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://imazine.com/images/logo@2x.png" />
@@ -89,7 +89,8 @@ body {
 (function(){
   const u = 'domain';
   const d = 'imagedrome.com';
-  const mail = 'mailto:' + u + '@' + d;
+  const subj = '?subject=' + encodeURIComponent('Inquiry from IMAZINE.COM');
+  const mail = 'mailto:' + u + '@' + d + subj;
   document.getElementById('emailLink').href = mail;
   document.getElementById('mainTextLink').href = mail;
 })();
