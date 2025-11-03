@@ -71,7 +71,7 @@ body {
   "url": "https://imazine.com",
   "name": "IMAZINE",
   "alternateName": "IMAZINE.COM",
-  "description": "Official domain of IMAZINE.COM — a creative brand by Imagedrome.",
+  "description": "IMAZINE.COM is a long-held creative domain. For inquiries regarding this domain, please contact us via email.",
   "publisher": {
     "@type": "Organization",
     "name": "Imagedrome",
@@ -101,17 +101,25 @@ body {
              srcset="images/main_text@1x.png 1x, images/main_text@2x.png 2x"
              alt="For inquiries about this domain, please contact us via email.">
       </a>
+      <img class="copyright" src="images/copyright@2x.png" srcset="images/copyright@1x.png 1x, images/copyright@2x.png 2x" alt="© 1996–2025 IMAZINE.COM. All rights reserved.">
     </div>
   </div>
 </main>
 <script>
 (function(){
-  const u = 'domain';
-  const d = 'imagedrome.com';
-  const subj = '?subject=' + encodeURIComponent('Inquiry from IMAZINE.COM');
-  const mail = 'mailto:' + u + '@' + d + subj;
-  document.getElementById('emailLink').href = mail;
-  document.getElementById('mainTextLink').href = mail;
+  const u = 'domain', d = 'imagedrome.com';
+  const subject = 'Inquiry from IMAZINE.COM';
+  const mail = `mailto:${u}@${d}?subject=${encodeURIComponent(subject)}`;
+
+  const emailLink = document.getElementById('emailLink');
+  const mainTextLink = document.getElementById('mainTextLink');
+
+  [emailLink, mainTextLink].forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.open(mail, '_blank');
+    });
+  });
 })();
 </script>
 </body>
